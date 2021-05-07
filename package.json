@@ -1,0 +1,32 @@
+{
+    "name": "covicoin",
+    "version": "1.0.0",
+    "description": "Platform for COVICoin",
+    "main": "app.js",
+    "scripts": {
+        "dev": "nodemon app.js",
+        "start": "node app.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/cotnw/covicoin.git"
+    },
+    "author": "cotnw",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/cotnw/covicoin/issues"
+    },
+    "homepage": "https://github.com/cotnw/covicoin#readme",
+    "dependencies": {
+        "axios": "^0.21.1",
+        "cors": "^2.8.5",
+        "dotenv": "^9.0.0",
+        "ejs": "^3.1.6",
+        "express": "^4.17.1",
+        "login-with-twitter": "^1.2.4",
+        "mongoose": "^5.12.7",
+        "nodemon": "^2.0.7",
+        "twitter": "^1.7.1",
+        "urlencode": "^1.1.0"
+    }
+}
