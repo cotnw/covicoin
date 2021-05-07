@@ -1,0 +1,92 @@
+.main-wrap {
+    margin-top: 70px;
+    align-items: center;
+    display: flex;
+    margin: auto;
+    flex-flow: column wrap;
+}
+
+.landing1 {
+    align-items: center;
+    display: flex;
+    margin: auto;
+    flex-flow: column wrap;
+}
+
+.heading {
+    margin-top: 200px;
+    opacity: 32%;
+    color: black;
+    font-family: "Helvetica";
+    font-size: 80px;
+}
+
+.black-button {
+    color: white;
+    background-color: black;
+    border: none;
+    font-size: 20px;
+    font-family: "Helvetica";
+    padding: 15px 20px 15px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 60px;
+}
+
+.landing2 {
+    display: flex;
+    margin: auto;
+    flex-flow: column wrap;
+    width: 100%;
+}
+
+.subheading {
+    font-family: "Poppins";
+    color: black;
+    font-size: 50px;
+    padding: 100px 100px 20px 100px;
+    margin: 50px 0px 0px 0px;
+}
+
+.landing2 h4 {
+    font-family: "Poppins";
+    color: black;
+    font-size: 20px;
+    padding: 0px 100px 0px 100px;
+    margin: auto;
+}
+
+.guide {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.guide-number {
+    font-family: "Poppins";
+    color: black;
+    opacity: 20%;
+    font-size: 100px;
+}
+
+.guide-heading {
+    font-family: "Poppins";
+    color: black;
+    font-size: 40px;
+}
+
+.guide-column {
+    display: flex;
+    flex-flow: column wrap;
+    width: 50vh;
+}
+
+.guide-text {
+    font-family: "Poppins";
+    color: black;
+    font-size: 20px;
+}
+
+.guide-img {
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 10%), 0 6px 20px 0 rgb(0 0 0 / 10%);
+    border-radius: 10px;
+}
