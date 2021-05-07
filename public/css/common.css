@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@font-face {
+    font-family: "Helvetica";
+    src: url("Helvetica.ttf") format("truetype");
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+nav {
+    font-family: Helvetica;
+}
+
+.navbar {
+    height: 70px;
+    width: 100%;
+    background-color: #111111;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+.navbar-inline {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+.navbar-brand img {
+    margin-left: 40px;
+}
+
+.nav-header-text {
+    font-family: Helvetica;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 22px;
+    margin-left: 5px;
+}
+
+.nav-links {
+    position: absolute;
+    right: 0;
+    margin-right: 50px;
+}
+
+.nav-link {
+    color: white;
+    font-family: Helvetica;
+    font-size: 18px;
+    margin-right: 50px;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    cursor: pointer;
+}
