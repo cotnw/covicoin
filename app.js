@@ -6,6 +6,7 @@ require('dotenv').config();
 
 const indexRouter = require('./routes/index');
 const twitterRouter = require('./routes/twitter');
+const sessionRouter = require('./routes/session');
 
 const db = process.env.MONGODB_URL;
 
@@ -33,5 +34,6 @@ app.use(cors());
 
 app.use('/', indexRouter);
 app.use('/twitter', twitterRouter);
+app.use('/session', sessionRouter);
 
 module.exports = app;
