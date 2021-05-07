@@ -1,0 +1,2 @@
+# covicoin
+Platform for COVICoin
