@@ -25,6 +25,7 @@
         "express": "^4.17.1",
         "login-with-twitter": "^1.2.4",
         "mongoose": "^5.12.7",
+        "needle": "^2.6.0",
         "nodemon": "^2.0.7",
         "twitter": "^1.7.1",
         "urlencode": "^1.1.0"

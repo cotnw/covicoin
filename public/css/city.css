@@ -1,3 +1,8 @@
+body {
+    background-image: url('/assets/india-bg.png');
+    background-size: 100%;
+}
+
 .main-wrap {
     margin-top: 70px;
     align-items: center;
