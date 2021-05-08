@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/', (req, res) => {
-    res.render('index', { user_token: '', logout: false })
+    res.render('index', { user_token: '', logout: true })
 });
 
 module.exports = router

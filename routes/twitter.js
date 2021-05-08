@@ -55,7 +55,7 @@ router.get('/callback', async(req, res) => {
                 res.render('city', { user_token: user.userToken })
             });
         }
-        res.render('index', { user_token: user.userToken })
+        res.render('index', { user_token: user.userToken, logout: false })
     });
 });
 

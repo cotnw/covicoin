@@ -13,12 +13,14 @@
     flex-flow: column wrap;
 }
 
-.heading {
+.front-logo {
     margin-top: 250px;
-    opacity: 32%;
-    color: black;
-    font-family: "Helvetica";
-    font-size: 80px;
+}
+
+.tagline-text {
+    font-family: "Poppins";
+    font-size: 30px;
+    text-align: center;
 }
 
 .black-button {

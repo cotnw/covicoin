@@ -1,5 +1,4 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/inter-ui/3.18.0/inter.css");
-
 .main-wrap {
     height: 500px;
     width: 1100px;
@@ -10,10 +9,10 @@
     align-items: center;
 }
 
-.left-top  {
+.left-top {
     border-radius: 25px;
     width: 550px;
-    padding: 50px;  
+    padding: 50px;
     margin-top: -60px;
 }
 
@@ -138,12 +137,14 @@
     font-size: 18px;
     font-weight: 400;
     text-align: center;
+    cursor: pointer;
 }
 
 .buttons-inline {
     display: flex;
     flex-flow: row wrap;
     align-items: center;
+    margin-bottom: 50px;
 }
 
 .back-to-session-button {
@@ -161,6 +162,7 @@
     font-size: 18px;
     font-weight: 400;
     text-align: center;
+    cursor: pointer;
 }
 
 .generated-tweet-card {
@@ -204,6 +206,7 @@
     align-items: center;
     margin-left: 34px;
     margin-top: 20px;
+    cursor: pointer;
 }
 
 .copy-to-clipboard svg {
@@ -282,6 +285,7 @@
     font-size: 18px;
     font-weight: 400;
     text-align: center;
+    cursor: pointer;
 }
 
 .end-session-button {
