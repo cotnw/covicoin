@@ -1,0 +1,137 @@
+.main-wrap {
+    height: 500px;
+    width: 1100px;
+    margin: auto;
+    margin-top: 120px;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+.left h1 {
+    font-family: Poppins;
+    font-size: 24px;
+    margin-left: 50px;
+}
+
+.left-card {
+    background: #FFFFFF;
+    /* shadow */
+    box-shadow: 0px 4px 36px rgba(0, 0, 0, 0.15);
+    border-radius: 7px;
+    height: 100px;
+    width: 500px;
+    margin-left: 50px;
+    margin-bottom: 30px;
+    font-family: Poppins;
+}
+
+.left-card h4 {
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: lighter;
+    font-size: 14px;
+    padding-top: 25px;
+    padding-left: 40px;
+}
+
+.left-card p {
+    color: rgba(0, 0, 0, 0.87);
+    font-weight: lighter;
+    font-size: 16px;
+    margin-top: -20px;
+    font-weight: bold;
+    padding-left: 40px;
+}
+
+.right  {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    position: absolute;
+    margin-left: 580px;
+    margin-top: 100px;
+    width: 500px;
+}
+
+.right-card {
+    background: #FFFFFF;
+    box-shadow: 0px 4px 36px rgba(0, 0, 0, 0.15);
+    border-radius: 7px;
+    height: 200px;
+    width: 200px;
+    font-family: Poppins;
+    margin-right: 30px;
+    margin-bottom: 30px;
+}
+
+.right-card h2 {
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: lighter;
+    font-size: 18px;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.right-card h3 {
+    text-align: center;
+    font-size: 40px;
+    margin-top: -10px;
+}
+
+.inline {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+.twitter-connected-button {
+    height: 50px;
+    width: 180px;
+    background-color: transparent;
+    border: none;
+    background: #5DA9DD;
+    border-radius: 4px;
+    font-family: Poppins;
+    font-size: 17px;
+    font-weight: 500;
+    color: white;
+    margin-left: 130px;
+}
+
+.redeem-button {
+    margin-left: 195px;
+    background: black;
+    width: 160px;
+    height: 50px;
+    border: none;
+    border-radius: 4px;
+    font-family: Poppins;
+    font-size: 17px;
+    font-weight: 500;
+    color: white;
+}
+
+.twitter-img {
+    height: 20px;
+    width: 25px;
+    margin-left: -50px;
+}
+
+.twitter-text {
+    margin-top: -25px;
+}
+
+.end-session-button {
+    margin-left: 50px;
+    height: 60px;
+    width: 200px;
+    background-color: transparent;
+    border: none;
+    border: 2px #DE3939 solid;
+    border-radius: 10px;
+    font-family: Poppins;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+    color: #DE3939;
+}

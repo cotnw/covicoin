@@ -20,7 +20,7 @@
 
 .initial-table {
     height: 50px;
-    width: 102%;
+    width: 100%;
     background: #EDEDED;
     border: none;
     border: 2px solid #EDEDED;
@@ -46,4 +46,21 @@
     font-weight: normal;
     color: black;
     margin-bottom: 20px;
+}
+
+.resources {
+    height: 300px;
+    margin-bottom: 30px;
+    font-family: Poppins;
+    position: relative;
+    margin-top: 5px;
+}
+
+.resources a {
+    color: blue;
+    text-decoration: none;
+}
+
+.resource-link {
+    margin-bottom: 10px;
 }

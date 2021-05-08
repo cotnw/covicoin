@@ -13,4 +13,12 @@ router.get('/city', (req, res) => {
     res.render('city')
 })
 
+router.get('/resources', (req, res) => {
+    res.render('resources')
+});
+
+router.get('/profile', (req, res) => {
+    res.render('profile')
+});
+
 module.exports = router
