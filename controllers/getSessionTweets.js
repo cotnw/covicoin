@@ -8,24 +8,24 @@ function createCustomTweetObject(text, tweetIdString) {
     const tweetText = text.toLowerCase();
     const searchKeywords = ['oxygen', 'ventilator', 'fabiflu', 'remdesivir', 'favipiravar', 'tocilizumab', 'plasma', 'icu', 'icu beds', 'hospital beds', 'rt pcr', 'acterma', 'covid test', 'itolizumab', 'fapvir', 'faviblu', 'flugard', 'fevindo', 'araflu', 'avigan', 'favilow', 'favipill', 'cipvir']
     const cities = ["gurgaon", "noida", "dehradun", "delhi", "kanpur", "mumbai", "kolkata", "bangalore", "chennai", "hyderabad", "pune", "ahmedabad", "surat", "lucknow", "jaipur", "cawnpore", "mirzapur", "nagpur", "ghaziabad", "indore", "vadodara", "vishakhapatnam", "bhopal", "chinchvad", "patna", "ludhiana", "agra", "kalyan", "madurai", "jamshedpur", "nasik", "faridabad", "aurangabad", "rajkot", "meerut", "jabalpur", "thane", "dhanbad", "allahabad", "varanasi", "srinagar", "amritsar", "aligarh", "bhiwandi", "gwalior", "bhilai", "haora", "ranchi", "bezwada", "chandigarh", "mysore", "raipur", "kota", "bareilly", "jodhpur", "coimbatore", "dispur", "jhunjhunu", "guwahati", "solapur", "trichinopoly", "hubli", "jalandhar", "bhubaneshwar", "bhayandar", "moradabad", "kolhapur", "thiruvananthapuram", "saharanpur", "warangal", "salem", "malegaon", "kochi", "gorakhpur", "shimoga", "tiruppur", "guntur", "raurkela", "mangalore", "nanded", "cuttack", "chanda", "dehra dun", "durgapur", "asansol", "bhavnagar", "amravati", "nellore", "ajmer", "tinnevelly", "bikaner", "agartala", "ujjain", "jhansi", "ulhasnagar", "davangere", "jammu", "belgaum", "gulbarga", "jamnagar", "dhulia", "gaya", "jalgaon", "kurnool", "udaipur", "bellary", "sangli", "tuticorin", "calicut", "akola", "bhagalpur", "sikar", "tumkur", "quilon", "muzaffarnagar", "bhilwara", "nizamabad", "bhatpara", "kakinada", "parbhani", "panihati", "latur", "rohtak", "rajapalaiyam", "ahmadnagar", "cuddapah", "rajahmundry", "alwar", "muzaffarpur", "bilaspur", "mathura", "kamarhati", "patiala", "saugor", "bijapur", "brahmapur", "shahjanpur", "trichur", "barddhaman", "kulti", "sambalpur", "purnea", "hisar", "firozabad", "bidar", "rampur", "shiliguri", "bali", "panipat", "karimnagar", "bhuj", "ichalkaranji", "tirupati", "hospet", "aizawl", "sannai", "barasat", "ratlam", "handwara", "drug", "imphal", "anantapur", "etawah", "raichur", "ongole", "bharatpur", "begusarai", "sonipat", "ramgundam", "hapur", "uluberiya", "porbandar", "pali", "vizianagaram", "puducherry", "karnal", "nagercoil", "tanjore", "sambhal", "shimla", "ghandinagar", "shillong", "port blair", "gangtok", "kohima", "itanagar", "panaji", "daman", "kavaratti", "panchkula", "kagaznagar"]
-    
+
     const keyWordsArray = []
     searchKeywords.forEach(keyword => {
-        if(tweetText.toLowerCase().includes(keyword)) {
+        if (tweetText.toLowerCase().includes(keyword)) {
             keyWordsArray.push(keyword)
         }
     })
-    
+
     let tweetPlace = 'none'
     cities.forEach(city => {
-        if(tweetText.toLowerCase().includes(city)) {
+        if (tweetText.toLowerCase().includes(city)) {
             tweetPlace = city
         }
     })
-    
-    if(keyWordsArray.length != 0) {
+
+    if (keyWordsArray.length != 0) {
         return {
-            success: true, 
+            success: true,
             data: {
                 tweet_id: tweetId,
                 helped: false,
@@ -37,7 +37,7 @@ function createCustomTweetObject(text, tweetIdString) {
         }
     } else {
         return {
-            success: false, 
+            success: false,
             data: {
                 tweet_id: tweetId,
                 helped: false,
@@ -48,7 +48,7 @@ function createCustomTweetObject(text, tweetIdString) {
             }
         }
     }
-    
+
 }
 
 async function getRequest1(place) {
@@ -72,16 +72,16 @@ async function getRequest1(place) {
     data.forEach(tweet => {
         const resp = createCustomTweetObject(tweet.text, tweet.id)
         const tweet_url = `https://twitter.com/randomperson/status/${tweet.id}`
-        if(tweet.text.includes('RT')) {
+        if (tweet.text.includes('RT')) {
             const tweetTextUpdated = tweet.text.split('RT ')[1]
-            if(resp.success) {
+            if (resp.success) {
                 const twt = resp.data
                 twt['tweet_url'] = tweet_url
                 twt['text'] = tweetTextUpdated
                 placeFilteredTweets.push(twt)
             }
         } else {
-            if(resp.success) {
+            if (resp.success) {
                 const twt = resp.data
                 twt['tweet_url'] = tweet_url
                 twt['text'] = tweet.text
@@ -114,23 +114,23 @@ async function getRequest2() {
     data.forEach(tweet => {
         const resp = createCustomTweetObject(tweet.text, tweet.id)
         const tweet_url = `https://twitter.com/randomperson/status/${tweet.id}`
-        if(tweet.text.includes('RT')) {
+        if (tweet.text.includes('RT')) {
             const tweetTextUpdated = tweet.text.split('RT ')[1]
-            if(resp.success) {
+            if (resp.success) {
                 const twt = resp.data
                 twt['tweet_url'] = tweet_url
                 twt['text'] = tweetTextUpdated
                 generalFilteredTweets.push(twt)
             }
         } else {
-            if(resp.success) {
+            if (resp.success) {
                 const twt = resp.data
                 twt['tweet_url'] = tweet_url
                 twt['text'] = tweet.text
                 generalFilteredTweets.push(twt)
             }
         }
-        
+
     })
 
     return { data: generalFilteredTweets, length: generalFilteredTweets.length }
@@ -139,21 +139,22 @@ async function getRequest2() {
 function stringArrayFinder(s, a) {
     bool = false
     a.forEach(element => {
-        if(element.text == s) {
+        if (element.text == s) {
             bool = true
         }
     });
     return bool
-} 
+}
 
 function shuffle(array) {
-    var currentIndex = array.length, temporaryValue, randomIndex;
+    var currentIndex = array.length,
+        temporaryValue, randomIndex;
     while (0 !== currentIndex) {
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex -= 1;
-      temporaryValue = array[currentIndex];
-      array[currentIndex] = array[randomIndex];
-      array[randomIndex] = temporaryValue;
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
     }
     return array;
 }
@@ -162,23 +163,26 @@ function getSessionTweets(userPlace, count) {
     let promise = new Promise(async(resolve, reject) => {
         const resp1 = await getRequest1(userPlace)
         const resp2 = await getRequest2()
-        const resp = {placeSpecificTweets: resp1.data, generalTweets: resp2.data, count: resp1.length + resp2.length}
+        const resp = { placeSpecificTweets: resp1.data, generalTweets: resp2.data, count: resp1.length + resp2.length }
         const sessionTweets = []
         const finalSessionTweets = []
         const arrCount = count
 
-        for(let i=0; i<50; i++) {
-            if(!stringArrayFinder(resp.placeSpecificTweets[i].text, sessionTweets)) {
+        for (let i = 0; i < resp.placeSpecificTweets.length; i++) {
+            if (!stringArrayFinder(resp.placeSpecificTweets[i].text, sessionTweets)) {
                 sessionTweets.push(resp.placeSpecificTweets[i])
             }
-            if(!stringArrayFinder(resp.generalTweets[i].text, sessionTweets)) {
+        }
+
+        for (let i = 0; i < resp.generalTweets.length; i++) {
+            if (!stringArrayFinder(resp.generalTweets[i].text, sessionTweets)) {
                 sessionTweets.push(resp.generalTweets[i])
             }
         }
 
         const shuffledFinalSessionTweets = shuffle(finalSessionTweets)
 
-        for(let i=0; i<arrCount; i++) {
+        for (let i = 0; i < arrCount; i++) {
             shuffledFinalSessionTweets.push(sessionTweets[i])
         }
 

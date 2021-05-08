@@ -52,10 +52,11 @@ router.get('/callback', async(req, res) => {
                     name: users.name
                 })
                 newUser.save()
-                res.render('city', { user_token: user.userToken })
+                res.redirect(`/city?token=${user.userToken}`)
             });
+        } else {
+            res.render('index', { user_token: user.userToken, logout: false })
         }
-        res.render('index', { user_token: user.userToken, logout: false })
     });
 });
 

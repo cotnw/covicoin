@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="/css/city.css">
     <link rel="icon" href="/assets/logo.png" type="image/png" sizes="60x60">
     <title>COVICoin - Session</title>
+    <script>
+        if ('<%= user_token %>' != '') {
+            localStorage.setItem('token', '<%= user_token %>');
+        }
+    </script>
 </head>
 
 <body>

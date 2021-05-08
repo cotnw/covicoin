@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const SessionSchema = new mongoose.Schema({
-    user_id: {
+    user_token: {
         type: String,
         required: true
     },
@@ -11,11 +11,11 @@ const SessionSchema = new mongoose.Schema({
     },
     leads_confirmed: {
         type: Number,
-        required: true
+        default: 0
     },
     covicoins: {
         type: Number,
-        required: true
+        default: 0
     },
     date: {
         type: Date,
