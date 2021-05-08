@@ -1,0 +1,49 @@
+.leaderboard {
+    height: 500px;
+    width: 1100px;
+    margin-left: 100px;
+    margin-top: 120px;
+}
+
+.leaderboard h1 {
+    font-family: Poppins;
+    color: #1E1E1E;
+}
+
+.leaderboard p {
+    font-family: Poppins;
+    font-size: 18px;
+    color: #000000;
+    width: 800px;
+    margin-top: -15px;
+}
+
+.initial-table {
+    height: 50px;
+    width: 102%;
+    background: #EDEDED;
+    border: none;
+    border: 2px solid #EDEDED;
+    border-radius: 9px;
+}
+
+.initial-table th {
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: bold;
+    color: black
+}
+
+.second-table {
+    height: 50px;
+    width: 100%;
+    padding-top: 20px;
+}
+
+.second-table th {
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: normal;
+    color: black;
+    margin-bottom: 20px;
+}

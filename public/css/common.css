@@ -61,3 +61,34 @@ nav {
 .nav-link:hover {
     cursor: pointer;
 }
+
+.endsession-button {
+    height: 40px;
+    width: 140px;
+    background: white;
+    border: none;
+    border-radius: 7.50179px;
+    color: black;
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+    margin-left: 0px;
+}
+
+.startsession-button {
+    height: 40px;
+    width: 140px;
+    background: transparent;
+    border: none;
+    border-style: solid;
+    border-radius: 7.50179px;
+    border-color: white;
+    border-width: 1px;
+    color: white;
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+    margin-left: 0px;
+}

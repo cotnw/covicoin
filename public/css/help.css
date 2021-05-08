@@ -1,0 +1,299 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/inter-ui/3.18.0/inter.css");
+
+.main-wrap {
+    height: 500px;
+    width: 1100px;
+    margin: auto;
+    margin-top: 120px;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+.left-top  {
+    border-radius: 25px;
+    width: 550px;
+    padding: 50px;  
+    margin-top: -60px;
+}
+
+.top-inline {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+.top-inline h2 {
+    font-size: 24px;
+    color: rgba(0, 0, 0, 0.6);
+    opacity: 0.9;
+    font-family: Poppins;
+    font-weight: 400;
+}
+
+.top-inline img {
+    height: 23.5px;
+    width: 23.5px;
+    margin-left: 350px;
+}
+
+.tweet-embed {
+    width: 600px;
+}
+
+.end-session-button {
+    margin-left: 50px;
+    height: 60px;
+    width: 300px;
+    background-color: transparent;
+    border: none;
+    border: 2px #DE3939 solid;
+    border-radius: 10px;
+    font-family: Poppins;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+    color: #DE3939;
+}
+
+.right {
+    margin-left: 650px;
+    position: absolute;
+    top: 0;
+    margin-top: 185px;
+}
+
+.resources {
+    background: #EBEBEB;
+    border-radius: 8px;
+    padding: 30px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    width: 300px;
+    height: 300px;
+    margin-bottom: 30px;
+    font-family: Poppins;
+    position: relative;
+    margin-top: 5px;
+}
+
+.resources h3 {
+    margin-bottom: 10px;
+}
+
+.resources a {
+    color: grey;
+    text-decoration: none;
+}
+
+.resource-link {
+    margin-bottom: 10px;
+}
+
+.left-form {
+    margin-left: 50px;
+    margin-top: -50px;
+}
+
+.left-form h2 {
+    font-family: Poppins;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.generate-tweet-form p {
+    font-family: Inter;
+    font-size: 14px;
+}
+
+.input-inline {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+.generate-tweet-form {
+    margin-top: 20px;
+}
+
+.generate-tweet-form input {
+    height: 50px;
+    width: 300px;
+    border: none;
+    border: 1px black solid;
+    border-radius: 4px;
+    font-size: 18px;
+    padding-left: 15px;
+}
+
+.generate-tweet-button {
+    margin-left: 50px;
+    height: 50px;
+    width: 240px;
+    background: #5DA9DD;
+    border: none;
+    border-radius: 7.50179px;
+    color: white;
+    font-family: Poppins;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.buttons-inline {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+.back-to-session-button {
+    margin-left: 30px;
+    height: 50px;
+    width: 230px;
+    background: transparent;
+    border: none;
+    border-style: solid;
+    border-radius: 7.50179px;
+    border-color: black;
+    border-width: 1px;
+    color: black;
+    font-family: Poppins;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.generated-tweet-card {
+    background-color: #FFFFFF;
+    box-shadow: 0px 4px 36px rgba(0, 0, 0, 0.15);
+    border-radius: 25px;
+    width: 300px;
+    margin-bottom: 30px;
+    font-family: Poppins;
+    padding: 30px;
+    padding-top: 20px;
+}
+
+.generated-tweet-card h1 {
+    font-size: 20px;
+    text-align: center;
+}
+
+.generated-tweet-text {
+    background: #EBEBEB;
+    border-radius: 8px;
+    padding: 30px;
+    padding-top: 20px;
+}
+
+.copy-to-clipboard {
+    height: 50px;
+    width: 230px;
+    background-color: transparent;
+    border: none;
+    border-style: solid;
+    border-radius: 7.50179px;
+    border-color: black;
+    border-width: 1px;
+    color: black;
+    font-family: Poppins;
+    font-size: 15px;
+    font-weight: 500;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    margin-left: 34px;
+    margin-top: 20px;
+}
+
+.copy-to-clipboard svg {
+    height: 20px;
+    width: 20px;
+    margin-left: 25px;
+    margin-right: 10px;
+}
+
+.left-form2 {
+    margin-left: 50px;
+    margin-top: -50px;
+}
+
+.left-form2 h2 {
+    font-family: Poppins;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.left-form2 p {
+    width: 550px;
+    font-family: Poppins;
+    font-size: 15px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.6);
+    margin-top: -10px;
+}
+
+.upload-image-form {
+    margin-top: 40px;
+}
+
+.upload-image-form input {
+    height: 50px;
+    width: 300px;
+    border: none;
+    border: 1px black solid;
+    border-radius: 4px;
+    font-size: 18px;
+    padding-left: 15px;
+}
+
+.file-upload-text:hover {
+    cursor: pointer;
+}
+
+.upload-button {
+    margin-left: -200px;
+    height: 40px;
+    width: 150px;
+    background: rgba(0, 0, 0, 0.87);
+    border-radius: 6.33179px;
+    border: none;
+    color: white;
+    font-family: Poppins;
+    margin-top: -30px;
+}
+
+.image-upload-inline {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    margin-top: -50px;
+}
+
+.verify-reply-button {
+    margin-left: 50px;
+    height: 50px;
+    width: 240px;
+    background: #5DA9DD;
+    border: none;
+    border-radius: 7.50179px;
+    color: white;
+    font-family: Poppins;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.end-session-button {
+    height: 40px;
+    width: 140px;
+    background: white;
+    border: none;
+    border-radius: 7.50179px;
+    color: black;
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+    margin-left: 0px;
+}
