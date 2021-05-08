@@ -56,7 +56,7 @@ router.get('/start', async(req, res) => {
     if (user) {
         let currentSession = await Session.findOne({ user_token: req.query.token, is_active: true })
         if (currentSession) {
-            res.render('session', currentSession)
+            res.redirect(`/session?token=${req.query.token}`)
         } else {
             if (user.tweets_limit.count != 0) {
                 const tweetsArray = await getSessionTweets(user.city, user.tweets_limit.count)

@@ -7,61 +7,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/common.css">
     <link rel="stylesheet" href="/css/session.css">
-    <link rel="icon" href="/assets/logo.png" type="image/png" sizes="60x60">
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml sizes=" 60x60 ">
     <title>COVICoin - Session</title>
 </head>
 
 <body>
-    <nav class="navbar">
-        <div class="navbar-inline">
-            <a class="navbar-brand" href="/">
-                <img src="/assets/logo-white.svg" alt="" width="150" height="60">
+    <nav class="navbar ">
+        <div class="navbar-inline ">
+            <a class="navbar-brand " href="/ ">
+                <img src="/assets/logo-white.svg " alt=" " width="150 " height="60 ">
             </a>
         </div>
-        <div class="nav-links">
-            <a href="/leaderboard" class="nav-link">Leaderboard</a>
-            <a href="/resources" class="nav-link">Resources</a>
-            <a href="/profile" class="nav-link">Profile</a>
-            <a href="/session/end" class="nav-link token"><button class="endsession-button">End Session</button></a>
+        <div class="nav-links ">
+            <a href="/leaderboard " class="nav-link ">Leaderboard</a>
+            <a href="/resources " class="nav-link ">Resources</a>
+            <a href="/profile " class="nav-link ">Profile</a>
+            <a href="/session/end " class="nav-link token "><button class="endsession-button ">End Session</button></a>
         </div>
     </nav>
-    <div class="main-wrap">
-        <div class="left">
-            <div class="left-card">
+    <div class="main-wrap ">
+        <div class="left ">
+            <div class="left-card ">
                 <h2>Leads provided</h2>
                 <h3>
                     <%= leads_confirmed %>
                 </h3>
             </div>
-            <div class="left-card">
+            <div class="left-card ">
                 <h2>Remaining limit</h2>
                 <h3>
                     <%= 20 - (leads_confirmed + leads_skipped) %>
                 </h3>
             </div>
-            <div class="left-card">
+            <div class="left-card ">
                 <h2>COVICoins earned</h2>
                 <h3>
                     <%= covicoins %>
                 </h3>
             </div>
-            <a href="/session/end" class="token"><button class="end-session-button">End Session</button></a><br><br><br>
+            <a href="/session/end " class="token "><button class="end-session-button ">End Session</button></a><br><br><br>
         </div>
-        <div class="right">
-            <div class="top-inline">
+        <div class="right ">
+            <div class="top-inline ">
                 <h2>Requested tweet</h2>
-                <span title="This is a tweet which is requesting for resources."><img src="/assets/question-mark.png"/></span>
+                <span title="This is a tweet which is requesting for resources. "><img src="/assets/question-mark.png "/></span>
             </div>
-            <div class="tweet-embed" id="tweet-embed">
+            <div class="tweet-embed " id="tweet-embed ">
                 <%- tweets[current_tweet_index].embed_html %>
             </div>
-            <div class="buttons-inline">
-                <a href="/session/skip" class="token"><button class="skip-button"><img src="/assets/skip.png">Skip</button></a>
-                <a href="/session/help" class="token"><button class="help-button"><img src="/assets/hand.png">Help out</button></a>
+            <div class="buttons-inline ">
+                <a href="/session/skip " class="token "><button class="skip-button "><img src="/assets/skip.png ">Skip</button></a>
+                <a href="/session/help " class="token "><button class="help-button "><img src="/assets/hand.png ">Help out</button></a>
             </div>
         </div>
     </div>
-    <script src="/js/common.js"></script>
+    <script src="/js/common.js "></script>
 </body>
 
 </html>

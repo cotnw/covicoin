@@ -44,6 +44,30 @@ const LeadSchema = new mongoose.Schema({
     date: {
         type: Date,
         required: true
+    },
+    proof_ocr_text: {
+        type: String,
+        required: true
+    },
+    proof_url: {
+        type: String,
+        required: false
+    },
+    generated_reply: {
+        type: String,
+        required: true
+    },
+    verify1: {
+        type: Boolean,
+        default: false
+    },
+    verify2: {
+        type: Boolean,
+        default: false
+    },
+    is_active: {
+        type: Boolean,
+        default: true
     }
 })
 

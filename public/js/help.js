@@ -46,19 +46,21 @@ function generateTweet() {
 </div>
 <br><br>
 <div class="buttons-inline">
-    <form action="/verify" method="POST">
+    <form action="/verify?token=${localStorage.getItem('token')}" method="POST">
         <input type="hidden" id="ocrText" name="ocrText" value="">
         <input type="hidden" id="formData" name="formData" value="">
+        <input type="hidden" id="generatedReply" name="generatedReply" value="">
         <button class="verify-reply-button" type="submit">Verify Reply</button>
     </form>
     <a href="/session" class="token"><button class="back-to-session-button">Back to session</button></a>
 </div>
 <br><br><br>`
     const verifyScript = document.createElement('script');
-    verifyScript.setAttribute('src','/js/verify.js');
+    verifyScript.setAttribute('src', '/js/verify.js');
     document.head.appendChild(verifyScript);
     document.getElementById('generated-tweet-div').scrollIntoView()
     document.getElementById("formData").setAttribute("value", JSON.stringify(formData))
+    document.getElementById("generatedReply").setAttribute("value", generatedTweet)
 }
 
 function copyToClipboard() {
