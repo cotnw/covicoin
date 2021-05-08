@@ -20,6 +20,37 @@ const UserSchema = new mongoose.Schema({
     profile_image: {
         type: String,
         required: true
+    },
+    name: {
+        type: String,
+        required: true
+    },
+    state: {
+        type: String,
+        required: false
+    },
+    city: {
+        type: String,
+        required: false
+    },
+    covicoins: {
+        type: Number,
+        default: 0
+    },
+    streak: {
+        type: Number,
+        default: 0
+    },
+    tweets_limit: {
+        type: Object,
+        default: {
+            count: 20,
+            last_date: ''
+        }
+    },
+    verified_leads_count: {
+        type: Number,
+        default: 0
     }
 })
 

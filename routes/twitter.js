@@ -27,7 +27,6 @@ router.get('/', (req, res) => {
             console.log(err)
         }
         globalTokenSecret = tokenSecret
-        console.log(tokenSecret)
         res.redirect(url)
     })
 });
@@ -49,12 +48,14 @@ router.get('/callback', async(req, res) => {
                     user_id: user.userId,
                     user_token: user.userToken,
                     user_token_secret: user.userTokenSecret,
-                    profile_image: users.profile_image_url_https.replace('_normal', '')
+                    profile_image: users.profile_image_url_https.replace('_normal', ''),
+                    name: users.name
                 })
                 newUser.save()
+                res.render('city', { user_token: user.userToken })
             });
         }
-        res.redirect('/')
+        res.render('index', { user_token: user.userToken })
     });
 });
 

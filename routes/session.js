@@ -9,4 +9,8 @@ router.get('/help', (req, res) => {
     res.render('help')
 });
 
+router.get('/start', (req, res) => {
+
+})
+
 module.exports = router

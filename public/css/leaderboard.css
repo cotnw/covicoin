@@ -40,6 +40,10 @@
     padding-top: 20px;
 }
 
+.second-table a {
+    color: black;
+}
+
 .second-table th {
     font-family: Poppins;
     font-size: 16px;

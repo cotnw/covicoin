@@ -7,6 +7,10 @@ require('dotenv').config();
 const indexRouter = require('./routes/index');
 const twitterRouter = require('./routes/twitter');
 const sessionRouter = require('./routes/session');
+const cityRouter = require('./routes/city');
+const profileRouter = require('./routes/profile');
+const leaderboardRouter = require('./routes/leaderboard');
+const resourcesRouter = require('./routes/resources');
 
 const db = process.env.MONGODB_URL;
 
@@ -35,5 +39,9 @@ app.use(cors());
 app.use('/', indexRouter);
 app.use('/twitter', twitterRouter);
 app.use('/session', sessionRouter);
+app.use('/city', cityRouter);
+app.use('/profile', profileRouter);
+app.use('/leaderboard', leaderboardRouter);
+app.use('/resources', resourcesRouter);
 
 module.exports = app;

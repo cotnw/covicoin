@@ -17,7 +17,7 @@ const LeadSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    user_id: {
+    user_token: {
         type: String,
         required: true
     },
@@ -40,6 +40,10 @@ const LeadSchema = new mongoose.Schema({
     additional_info: {
         type: String,
         required: false
+    },
+    date: {
+        type: Date,
+        required: true
     }
 })
 

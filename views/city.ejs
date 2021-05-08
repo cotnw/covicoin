@@ -24,8 +24,8 @@
         <div class="nav-links">
             <a href="/leaderboard" class="nav-link">Leaderboard</a>
             <a href="/resources" class="nav-link">Resources</a>
-            <a href="/profile" class="nav-link">Profile</a>
-            <a href="/session" class="nav-link"><button class="startsession-button">Start Session</button></a>
+            <a id="profile-navbar" href="/twitter" class="nav-link">Login</a>
+            <a href="/session/start" class="nav-link"><button class="startsession-button">Start Session</button></a>
         </div>
     </nav>
     <div class="main-wrap" width="100">
@@ -34,21 +34,22 @@
             <div class="select-div">
                 <div class="custom-select" style="flex: 2; margin-right: 50px;">
                     <p>State</p>
-                    <select>
+                    <select id="state">
                         <option>Selection</option>
                     </select>
                 </div>
                 <div class="custom-select" style="flex: 1;">
                     <p>City</p>
-                    <select>
+                    <select id="city">
                         <option>Selection</option>
                     </select>
                 </div>
             </div>
-            <button class="black-button" style="margin-top: 70px;">Proceed</button>
+            <button class="black-button" style="margin-top: 70px;" onclick="proceedButton()">Proceed</button>
         </div>
     </div>
-
+    <script src="/js/auth.js"></script>
+    <script src="/js/city.js"></script>
 </body>
 
 </html>

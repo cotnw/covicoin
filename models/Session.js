@@ -6,7 +6,7 @@ const SessionSchema = new mongoose.Schema({
         required: true
     },
     tweets: {
-        type: Object,
+        type: Array,
         required: true
     },
     leads_confirmed: {
@@ -15,6 +15,10 @@ const SessionSchema = new mongoose.Schema({
     },
     covicoins: {
         type: Number,
+        required: true
+    },
+    date: {
+        type: Date,
         required: true
     }
 })
