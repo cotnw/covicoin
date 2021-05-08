@@ -1,0 +1,56 @@
+.main-wrap {
+    margin-top: 70px;
+    align-items: center;
+    display: flex;
+    margin: auto;
+    flex-flow: column wrap;
+    height: 90vh;
+}
+
+.main-content {
+    align-items: center;
+    display: flex;
+    margin: auto;
+    flex-flow: column wrap;
+}
+
+.heading {
+    font-family: "Poppins";
+    font-size: 60px;
+}
+
+.select-div {
+    align-items: center;
+    display: flex;
+    margin: auto;
+    flex-flow: row wrap;
+    width: 80vh;
+}
+
+.custom-select select {
+    font-family: "Inter";
+    width: 100%;
+    padding: 15px 30px 15px 20px;
+    border-radius: 6px;
+    font-size: 15px;
+    margin: auto;
+}
+
+.black-button {
+    color: white;
+    background-color: black;
+    border: none;
+    font-size: 20px;
+    font-family: "Helvetica";
+    padding: 12px 30px 12px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 40px;
+}
+
+.custom-select p {
+    font-family: "Inter";
+    width: 100%;
+    font-size: 12px;
+    margin-bottom: 5px;
+}

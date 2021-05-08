@@ -9,4 +9,8 @@ router.get('/leaderboard', (req, res) => {
     res.render('leaderboard')
 });
 
+router.get('/city', (req, res) => {
+    res.render('city')
+})
+
 module.exports = router
