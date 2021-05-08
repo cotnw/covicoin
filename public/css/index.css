@@ -14,7 +14,7 @@
 }
 
 .heading {
-    margin-top: 200px;
+    margin-top: 250px;
     opacity: 32%;
     color: black;
     font-family: "Helvetica";
@@ -30,7 +30,7 @@
     padding: 15px 20px 15px 20px;
     border-radius: 10px;
     cursor: pointer;
-    margin-top: 60px;
+    margin-top: 40px;
 }
 
 .landing2 {
@@ -59,25 +59,33 @@
 .guide {
     display: flex;
     flex-flow: row wrap;
+    margin-top: 50px;
+    height: 300px;
 }
 
 .guide-number {
     font-family: "Poppins";
     color: black;
-    opacity: 20%;
-    font-size: 100px;
+    flex: 0.7;
+}
+
+.guide-number img {
+    margin: 50px 0px 50px 50px;
+    height: 120px;
 }
 
 .guide-heading {
     font-family: "Poppins";
     color: black;
     font-size: 40px;
+    margin: 0px;
 }
 
 .guide-column {
     display: flex;
     flex-flow: column wrap;
     width: 50vh;
+    flex: 2.3;
 }
 
 .guide-text {
@@ -89,4 +97,50 @@
 .guide-img {
     box-shadow: 0 4px 8px 0 rgb(0 0 0 / 10%), 0 6px 20px 0 rgb(0 0 0 / 10%);
     border-radius: 10px;
+    width: 400px;
+    margin: auto;
+}
+
+.landing-image-section {
+    display: flex;
+    margin: auto;
+    flex-flow: column wrap;
+    width: 100%;
+}
+
+.landing-image-section h2 {
+    font-family: "Poppins";
+    font-size: 20px;
+}
+
+.guide45 {
+    height: 800px;
+    display: flex;
+    flex-flow: row wrap;
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+.guide-column45 {
+    display: flex;
+    flex-flow: column wrap;
+    width: 50vh;
+    flex: 3;
+}
+
+.guide-row45 {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.center-heading {
+    font-family: "Poppins";
+    font-size: 40px;
+    text-align: center;
+}
+
+.center-text {
+    font-family: "Poppins";
+    font-size: 20px;
+    text-align: center;
 }
