@@ -20,6 +20,18 @@ const SessionSchema = new mongoose.Schema({
     date: {
         type: Date,
         required: true
+    },
+    is_active: {
+        type: Boolean,
+        default: true
+    },
+    current_tweet_index: {
+        type: Number,
+        default: 0
+    },
+    leads_skipped: {
+        type: Number,
+        default: 0
     }
 })
 

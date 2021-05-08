@@ -74,6 +74,7 @@ nav {
     font-weight: 400;
     text-align: center;
     margin-left: 0px;
+    cursor: pointer;
 }
 
 .startsession-button {

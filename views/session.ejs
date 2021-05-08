@@ -22,42 +22,46 @@
             <a href="/leaderboard" class="nav-link">Leaderboard</a>
             <a href="/resources" class="nav-link">Resources</a>
             <a href="/profile" class="nav-link">Profile</a>
-            <a href="/session/end" class="nav-link"><button class="endsession-button">End Session</button></a>
+            <a href="/session/end" class="nav-link token"><button class="endsession-button">End Session</button></a>
         </div>
     </nav>
     <div class="main-wrap">
         <div class="left">
             <div class="left-card">
                 <h2>Leads provided</h2>
-                <h3>12</h3>
+                <h3>
+                    <%= leads_confirmed %>
+                </h3>
             </div>
             <div class="left-card">
                 <h2>Remaining limit</h2>
-                <h3>8</h3>
+                <h3>
+                    <%= 20 - (leads_confirmed + leads_skipped) %>
+                </h3>
             </div>
             <div class="left-card">
                 <h2>COVICoins earned</h2>
-                <h3>12</h3>
+                <h3>
+                    <%= covicoins %>
+                </h3>
             </div>
-            <button class="end-session-button">End Session</button><br><br><br>
+            <a href="/session/end" class="token"><button class="end-session-button">End Session</button></a><br><br><br>
         </div>
         <div class="right">
             <div class="top-inline">
                 <h2>Requested tweet</h2>
                 <span title="This is a tweet which is requesting for resources."><img src="/assets/question-mark.png"/></span>
             </div>
-            <div class="tweet-embed">
-                <blockquote class="twitter-tweet">
-                    <p lang="en" dir="ltr">*Need an ICU bed in Rohtak urgently* <br><br>Name - Sunita<br>Age - 59<br>Gender - Female<br>City- Rohtak<br>Oxygen saturation level- 57<br><br>Attendant Name - Mohit Dhall (son)<br><br>Contact - 9253557777</p>&mdash; Yusuf Pathan
-                    (@iamyusufpathan) <a href="https://twitter.com/iamyusufpathan/status/1390016142647848964?ref_src=twsrc%5Etfw">May 5, 2021</a></blockquote>
-                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            <div class="tweet-embed" id="tweet-embed">
+                <%- tweets[current_tweet_index].embed_html %>
             </div>
             <div class="buttons-inline">
-                <button class="skip-button"><img src="/assets/skip.png">Skip</button>
-                <button class="help-button"><img src="/assets/hand.png">Help out</button>
+                <a href="session/skip" class="token"><button class="skip-button"><img src="/assets/skip.png">Skip</button></a>
+                <a href="session/help" class="token"><button class="help-button"><img src="/assets/hand.png">Help out</button></a>
             </div>
         </div>
     </div>
+    <script src="/js/common.js"></script>
 </body>
 
 </html>
