@@ -28,12 +28,14 @@ router.get('/skip', async(req, res) => {
         currentSession.leads_skipped++
             currentSession.tweets[currentSession.current_tweet_index].skipped = true
         if (currentSession.current_tweet_index != 19) {
-            currentSession.current_tweet_index++
-                user.tweets_limit.count -= 1
+            currentSession.current_tweet_index++;
+            user.tweets_limit.count = user.tweets_limit.count - 1
+            user.tweets_limit.last_date = new Date()
         } else {
             currentSession.is_active = false
         }
         currentSession.save()
+        await User.updateOne({ _id: user.id }, { tweets_limit: user.tweets_limit })
         res.redirect(`/session?token=${req.query.token}`)
     } else {
         res.redirect(`/start?token=${req.query.token}`)
@@ -62,12 +64,14 @@ router.get('/start', async(req, res) => {
                 let leads_confirmed = 0
                 let leads_skipped = 0
                 let today = new Date
-                inactiveSessions.forEach(session => {
-                    if (session.date.getDate() == today.getDate()) {
-                        leads_confirmed += session.leads_confirmed
-                        leads_skipped += session.leads_skipped
-                    }
-                })
+                if (inactiveSessions) {
+                    inactiveSessions.forEach(session => {
+                        if (session.date.getDate() == today.getDate()) {
+                            leads_confirmed += session.leads_confirmed
+                            leads_skipped += session.leads_skipped
+                        }
+                    })
+                }
                 let session = new Session({
                     user_token: user.user_token,
                     tweets: tweetsArray,
@@ -76,10 +80,7 @@ router.get('/start', async(req, res) => {
                     leads_skipped
                 })
                 session.save()
-                let currentSession = await Session.findOne({ user_token: req.query.token, is_active: true })
-                if (currentSession) {
-                    res.redirect(`/session?token=${req.query.token}`)
-                }
+                res.redirect(`/session?token=${req.query.token}`)
             }
         }
     } else {
