@@ -12,6 +12,7 @@ const profileRouter = require('./routes/profile');
 const leaderboardRouter = require('./routes/leaderboard');
 const resourcesRouter = require('./routes/resources');
 const logoutRouter = require('./routes/logout');
+const verifyRouter = require('./routes/verify');
 
 const db = process.env.MONGODB_URL;
 
@@ -45,5 +46,6 @@ app.use('/profile', profileRouter);
 app.use('/leaderboard', leaderboardRouter);
 app.use('/resources', resourcesRouter);
 app.use('/logout', logoutRouter);
+app.use('/verify', verifyRouter);
 
 module.exports = app;

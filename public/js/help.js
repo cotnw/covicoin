@@ -22,6 +22,7 @@ function generateTweet() {
     if (formData.additionalInfo != '') {
         generatedTweet += `\n${formData.additionalInfo}`
     }
+    document.getElementById('generated-tweet-div').style.display = "block"
     document.getElementById('generated-tweet-div').innerHTML = `<h1>Generated Tweet</h1>
     <div class="generated-tweet-text">
         ${generatedTweet.replaceAll('\n', '<br>')}
@@ -38,18 +39,26 @@ function generateTweet() {
         <input id="image-input" style="visibility: hidden;" type="file">
         <br><br>
         <div class="image-upload-inline">
-            <p>beat_this.jpg selected</p>
-            <button class="upload-button">Upload</button>
+            <p id="upload-text">No file selected</p>
+            <button class="upload-button" id="upload-button">Upload</button>
         </div>
     </form>
 </div>
 <br><br>
 <div class="buttons-inline">
-    <button class="verify-reply-button" onclick="verifyReply()">Verify Reply</button>
-    <a href="/session"><button class="back-to-session-button">Back to session</button></a>
+    <form action="/verify" method="POST">
+        <input type="hidden" id="ocrText" name="ocrText" value="">
+        <input type="hidden" id="formData" name="formData" value="">
+        <button class="verify-reply-button" type="submit">Verify Reply</button>
+    </form>
+    <a href="/session" class="token"><button class="back-to-session-button">Back to session</button></a>
 </div>
 <br><br><br>`
+    const verifyScript = document.createElement('script');
+    verifyScript.setAttribute('src','/js/verify.js');
+    document.head.appendChild(verifyScript);
     document.getElementById('generated-tweet-div').scrollIntoView()
+    document.getElementById("formData").setAttribute("value", JSON.stringify(formData))
 }
 
 function copyToClipboard() {
@@ -61,8 +70,4 @@ function copyToClipboard() {
     document.getElementById('copy-input').setSelectionRange(0, 99999); /* For mobile devices */
     document.execCommand("copy");
     document.getElementById('copy-input').parentNode.removeChild(document.getElementById('copy-input'));
-}
-
-function verifyReply() {
-
 }
