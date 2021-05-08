@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const UserSchema = new mongoose.Schema({
+const LeadSchema = new mongoose.Schema({
     session_id: {
         type: String,
         required: true
@@ -43,6 +43,6 @@ const UserSchema = new mongoose.Schema({
     }
 })
 
-const User = mongoose.model('User', UserSchema);
+const Lead = mongoose.model('Lead', LeadSchema);
 
-module.exports = User;
+module.exports = Lead;
