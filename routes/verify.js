@@ -70,21 +70,23 @@ router.get('/1', async(req, res) => {
                         };
                         axios(config).then(tweet => {
                             console.log(tweet.data.data)
-                            console.log(tweet.data.data.referenced_tweets[0])
-                            if (tweet.data.data.referenced_tweets[0].type == 'retweeted') {
-                                tweetID = tweet.data.data.referenced_tweets[0].id
-                                if (userTweets.data.data[0].referenced_tweets[0].id == tweetID) {
-                                    if (userTweets.data.data[0].text.includes('This is a ‘COVICoin’ generated reply!')) {
-                                        lead.verify1 = true
-                                    } else {
-                                        lead.verify1 = false
-                                    }
+                            if (tweet.data.data.referenced_tweets) {
+                                if (tweet.data.data.referenced_tweets[0].type == 'retweeted') {
+                                    tweetID = tweet.data.data.referenced_tweets[0].id
+
+                                }
+                            }
+                            if (userTweets.data.data[0].referenced_tweets[0].id == tweetID) {
+                                if (userTweets.data.data[0].text.includes('This is a ‘COVICoin’ generated reply!')) {
+                                    lead.verify1 = true
                                 } else {
                                     lead.verify1 = false
                                 }
-                                lead.save()
-                                res.redirect(`${process.env.BASE_URL}/verify/2?token=${req.query.token}`)
+                            } else {
+                                lead.verify1 = false
                             }
+                            lead.save()
+                            res.redirect(`${process.env.BASE_URL}/verify/2?token=${req.query.token}`)
                         })
                     })
                     .catch(function(error) {

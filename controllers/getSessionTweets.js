@@ -66,7 +66,7 @@ async function getRequest1(place) {
     })
 
     const placeFilteredTweets = []
-
+    console.log(res.body)
     const data = res.body.data
 
     data.forEach(tweet => {

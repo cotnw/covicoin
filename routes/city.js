@@ -20,7 +20,7 @@ router.get('/add', async(req, res) => {
                 user.state = req.query.state
                 user.city = req.query.city
                 user.save()
-                res.redirect('/')
+                res.redirect(process.env.BASE_URL)
             } else {
                 res.sendStatus(404)
             }
