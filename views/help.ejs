@@ -7,97 +7,97 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/common.css">
     <link rel="stylesheet" href="/css/help.css">
-    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml sizes=" 60x60 ">
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" sizes="60x60">
     <title>COVICoin - Session</title>
 </head>
 
 <body>
-    <nav class="navbar ">
-        <div class="navbar-inline ">
-            <a class="navbar-brand " href="/ ">
-                <img src="/assets/logo-white.svg " alt=" " width="150 " height="60 ">
+    <nav class="navbar">
+        <div class="navbar-inline">
+            <a class="navbar-brand" href="/">
+                <img src="/assets/logo-white.svg" alt="" width="150" height="60">
             </a>
         </div>
-        <div class="nav-links ">
-            <a href="/leaderboard " class="nav-link ">Leaderboard</a>
-            <a href="/resources " class="nav-link ">Resources</a>
-            <a href="/profile " class="nav-link ">Profile</a>
-            <a href="/session/end " class="nav-link token "><button class="endsession-button ">End Session</button></a>
+        <div class="nav-links">
+            <a href="/leaderboard" class="nav-link">Leaderboard</a>
+            <a href="/resources" class="nav-link">Resources</a>
+            <a href="/profile" class="nav-link">Profile</a>
+            <a href="/session/end" class="nav-link token"><button class="endsession-button">End Session</button></a>
         </div>
     </nav>
-    <div class="main-wrap ">
-        <div class="left ">
-            <div class="left-top ">
-                <div class="top-inline ">
+    <div class="main-wrap">
+        <div class="left">
+            <div class="left-top">
+                <div class="top-inline">
                     <h2>Request tweet</h2>
-                    <span title="This is a tweet which is requesting for resources. "><img src="/assets/question-mark.png "/></span>
+                    <span title="This is a tweet which is requesting for resources."><img src="/assets/question-mark.png"/></span>
                 </div>
-                <div class="tweet-embed ">
+                <div class="tweet-embed">
                     <%- tweets[current_tweet_index].embed_html %>
                 </div>
             </div>
-            <div class="left-form ">
+            <div class="left-form">
                 <h2>Please fill out the form below:</h2>
-                <form id="generate-tweet-form " class="generate-tweet-form " action="# ">
+                <form id="generate-tweet-form" class="generate-tweet-form" action="#">
                     <p>Address Line 1</p>
-                    <input name="address1 " type="text " autocomplete="off ">
+                    <input name="address1" type="text" autocomplete="off">
                     <br><br>
                     <p>Address Line 2</p>
-                    <input name="address2 " type="text " autocomplete="off ">
+                    <input name="address2" type="text" autocomplete="off">
                     <br><br>
-                    <div class="input-inline ">
+                    <div class="input-inline">
                         <div>
                             <p>Request Item/Service</p>
-                            <input name="item " type="text " style="width: 240px; " autocomplete="off ">
+                            <input name="item" type="text" style="width: 240px;" autocomplete="off">
                         </div>
-                        <div style="margin-left: 30px; ">
+                        <div style="margin-left: 30px;">
                             <p>Quantity</p>
-                            <input name="quantity " type="text " style="width: 230px; " autocomplete="off ">
+                            <input name="quantity" type="text" style="width: 230px;" autocomplete="off">
                         </div>
                     </div>
                     <br>
                     <p>Contact Name (optional)</p>
-                    <input name="contact-name " type="text " autocomplete="off ">
+                    <input name="contact-name" type="text" autocomplete="off">
                     <br><br>
-                    <div class="input-inline ">
+                    <div class="input-inline">
                         <div>
                             <p>Contact Number 1</p>
-                            <input name="contact-number-1 " type="text " style="width: 240px; " autocomplete="off ">
+                            <input name="contact-number-1" type="text" style="width: 240px;" autocomplete="off">
                         </div>
-                        <div style="margin-left: 30px; ">
+                        <div style="margin-left: 30px;">
                             <p>Contact Number 2</p>
-                            <input name="contact-number-2 " type="text " style="width: 230px; " autocomplete="off ">
+                            <input name="contact-number-2" type="text" style="width: 230px;" autocomplete="off">
                         </div>
                     </div>
                     <br>
                     <p>Additional Information (optional)</p>
-                    <input name="addl-info " type="text " style="width: 520px; " autocomplete="off ">
+                    <input name="addl-info" type="text" style="width: 520px;" autocomplete="off">
                     <br><br>
                 </form>
             </div>
-            <div class="buttons-inline ">
-                <button class="generate-tweet-button " onclick="generateTweet() ">Generate Tweet</button>
-                <a href="/session " class="token "><button class="back-to-session-button ">Back to session</button></a>
+            <div class="buttons-inline">
+                <button class="generate-tweet-button" onclick="generateTweet()">Generate Tweet</button>
+                <a href="/session" class="token"><button class="back-to-session-button">Back to session</button></a>
             </div>
         </div>
-        <div class="right ">
-            <div class="resources ">
+        <div class="right">
+            <div class="resources">
                 <h3>Resources</h3>
-                <div class="resource-link "><a href="https://covid19-twitter.in " target="_blank ">https://covid19-twitter.in</a></div>
-                <div class="resource-link "><a href="https://www.covidindiaresources.com/ " target="_blank ">https://www.covidindiaresources.com</a></div>
-                <div class="resource-link "><a href="https://life.coronasafe.network/ " target="_blank ">https://life.coronasafe.network</a></div>
-                <div class="resource-link "><a href="https://indiacovidresources.in/ " target="_blank ">https://indiacovidresources.in</a></div>
-                <div class="resource-link "><a href="https://oxygenblr.in/ " target="_blank ">https://oxygenblr.in</a></div>
-                <div class="resource-link "><a href="https://covidfightclub.org/ " target="_blank ">https://covidfightclub.org</a></div>
-                <div class="resource-link "><a href="https://www.factchecker.in " target="_blank ">https://www.factchecker.in</a></div>
+                <div class="resource-link"><a href="https://covid19-twitter.in" target="_blank">https://covid19-twitter.in</a></div>
+                <div class="resource-link"><a href="https://www.covidindiaresources.com/" target="_blank">https://www.covidindiaresources.com</a></div>
+                <div class="resource-link"><a href="https://life.coronasafe.network/" target="_blank">https://life.coronasafe.network</a></div>
+                <div class="resource-link"><a href="https://indiacovidresources.in/" target="_blank">https://indiacovidresources.in</a></div>
+                <div class="resource-link"><a href="https://oxygenblr.in/" target="_blank">https://oxygenblr.in</a></div>
+                <div class="resource-link"><a href="https://covidfightclub.org/" target="_blank">https://covidfightclub.org</a></div>
+                <div class="resource-link"><a href="https://www.factchecker.in" target="_blank">https://www.factchecker.in</a></div>
             </div>
-            <div class="generated-tweet-card " id='generated-tweet-div'>
+            <div class="generated-tweet-card" id='generated-tweet-div'>
 
             </div>
         </div>
     </div>
-    <script src="/js/help.js "></script>
-    <script src="/js/common.js "></script>
+    <script src="/js/help.js"></script>
+    <script src="/js/common.js"></script>
 </body>
 
 </html>
