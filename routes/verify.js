@@ -103,6 +103,7 @@ router.get('/1', async(req, res) => {
 
 router.get('/2', async(req, res) => {
     let session = await Session.findOne({ user_token: req.query.token, is_active: true })
+    let user = await User.findOne({ user_token: req.query.token })
     if (session) {
         let lead = await Lead.findOne({ session_id: session._id, user_token: req.query.token })
         let bool1 = lead.proof_ocr_text.trim().includes(lead.contact_number1)
@@ -117,6 +118,9 @@ router.get('/2', async(req, res) => {
         }
         const updatedLead = lead
         session.current_tweet_index++;
+        user.tweets_limit.count = user.tweets_limit.count - 1
+        user.tweets_limit.last_date = new Date()
+        await User.updateOne({ _id: user.id }, { tweets_limit: user.tweets_limit })
         session.save()
         lead.save()
         console.log(updatedLead)

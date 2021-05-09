@@ -20,8 +20,9 @@ router.get('/details', async(req, res) => {
         if (leads) {
             response.leads_total = leads.length
             count = 0
+            let today = new Date()
             leads.forEach((lead) => {
-                if (lead.date.getDate() == new Date.getDate()) {
+                if (lead.date.getDate() == today.getDate()) {
                     count++
                 }
             })
