@@ -96,7 +96,7 @@ router.get('/end', async(req, res) => {
         user.covicoins += currentSession.covicoins
         user.save()
         currentSession.save()
-        res.render('index', { user_token: '', logout: false })
+        res.redirect('/')
     } else {
         res.sendStatus(404)
     }
