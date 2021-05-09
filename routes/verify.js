@@ -46,46 +46,56 @@ router.get('/1', async(req, res) => {
     let session = await Session.findOne({ user_token: req.query.token, is_active: true })
     if (session) {
         let lead = await Lead.findOne({ session_id: session._id, user_token: req.query.token })
-        if(lead) {
-            const tweetID = session.tweets[session.current_tweet_index].tweet_id
+        if (lead) {
+            let tweetID = session.tweets[session.current_tweet_index].tweet_id
             let user = await User.findOne({ user_token: req.query.token })
-            if (user) { 
+            if (user) {
                 console.log(tweetID)
                 const userID = user.user_id
-                const config = {
+                let config = {
                     method: 'get',
                     url: `https://api.twitter.com/2/users/${userID}/tweets?expansions=referenced_tweets.id`,
                     headers: {
                         'Authorization': `Bearer ${process.env.BEARER_TOKEN}`
                     }
                 };
-
                 axios(config)
-                .then(function (response) {
-                    console.log(response.data.data[0])
-                    res.send("hi")
-                    // if(response.data.data[0].id == tweetID) {
-                    //     if(response.data.data[0].text.includes('This is a ‘COVICoin’ generated reply!')) {
-                    //         lead.verify1 = true
-                    //     } else {
-                    //         lead.verify1 = false
-                    //     }
-                    // } else {
-                    //     lead.verify1 = false
-                    // }
-                    // lead.save()
-                    // res.redirect(`verify/2?token=${req.query.token}`)
-                })
-                .catch(function (error) {
-                    console.log(error);
-                });
+                    .then(function(userTweets) {
+                        let config = {
+                            method: 'get',
+                            url: `https://api.twitter.com/2/tweets/${tweetID}?expansions=referenced_tweets.id,entities.mentions.username,author_id&tweet.fields=text`,
+                            headers: {
+                                'Authorization': `Bearer ${process.env.BEARER_TOKEN}`
+                            }
+                        };
+                        axios(config).then(tweet => {
+                            console.log(tweet.data.data)
+                            console.log(tweet.data.data.referenced_tweets[0])
+                            if (tweet.data.data.referenced_tweets[0].type == 'retweeted') {
+                                tweetID = tweet.data.data.referenced_tweets[0].id
+                                if (userTweets.data.data[0].referenced_tweets[0].id == tweetID) {
+                                    if (userTweets.data.data[0].text.includes('This is a ‘COVICoin’ generated reply!')) {
+                                        lead.verify1 = true
+                                    } else {
+                                        lead.verify1 = false
+                                    }
+                                } else {
+                                    lead.verify1 = false
+                                }
+                                lead.save()
+                                res.redirect(`${process.env.BASE_URL}/verify/2?token=${req.query.token}`)
+                            }
+                        })
+                    })
+                    .catch(function(error) {
+                        console.log(error);
+                    });
             } else {
                 res.sendStatus(404)
             }
         } else {
             res.sendStatus(404)
         }
-        // Search on Twitter and confirm if user has commented the generated reply or not and set verify1 accordingly
     } else {
         res.sendStatus(404)
     }
@@ -97,16 +107,20 @@ router.get('/2', async(req, res) => {
         let lead = await Lead.findOne({ session_id: session._id, user_token: req.query.token })
         let bool1 = lead.proof_ocr_text.trim().includes(lead.contact_number1)
         let bool2 = lead.proof_ocr_text.trim().includes(lead.contact_number2)
-        if(bool1 == true || bool2 == true) {
+        if (bool1 == true || bool2 == true) {
             lead.verify2 = true
+            lead.is_active = false
+            session.leads_confirmed++;
+            session.covicoins++;
         } else {
             lead.verify2 = false
         }
         const updatedLead = lead
+        session.current_tweet_index++;
+        session.save()
         lead.save()
         console.log(updatedLead)
-        res.send('process completed')
-        // Search keywords in OCR Text and set verify2 to true in lead
+        res.redirect(`${process.env.BASE_URL}/session?token=${req.query.token}`)
     } else {
         res.sendStatus(404)
     }

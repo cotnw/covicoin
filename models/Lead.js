@@ -47,7 +47,7 @@ const LeadSchema = new mongoose.Schema({
     },
     proof_ocr_text: {
         type: String,
-        required: true
+        required: false
     },
     proof_url: {
         type: String,
