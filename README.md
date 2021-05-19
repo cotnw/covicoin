@@ -1,5 +1,8 @@
 # COVICoin
-Crashing COVID to the core
+COVICoin is a gamified experience that gives the user redeemable credits based on how many people they help. The system shows the users specific tweets which are asking for leads about COVID resources and the users get redeemable credits according to how much they can help the person by verifying leads and replying to that tweet.
+
+## Update
+This project won 2nd prize at [FrostHack 2021](https://frosthack.com).
 
 # Run demo
 Visit [https://covicoin.herokuapp.com](https://covicoin.herokuapp.com).
@@ -24,4 +27,6 @@ Visit [https://covicoin.herokuapp.com](https://covicoin.herokuapp.com).
 - nodemon
 - twitter
 - urlencode
+
 You can install everything by just running `npm i`.
+
